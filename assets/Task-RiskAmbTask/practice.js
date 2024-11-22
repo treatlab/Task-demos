@@ -14,20 +14,26 @@ function downloadBlob(content, filename, contentType) {
     pom.click();
   }
 
+function randperm(n) {
+    return Array
+        .from({ length: n }, (_, i) => i + 1)
+        .sort(() => Math.random() - 0.5);
+}  
+
 var Data = {
     vals: [5, 16, 19, 111, 72, 9],
     probs: [.5, .5, .25, .5, .25, .5],
     ambigs: [0, .24, 0, .74, 0, .24],
-    ITIs: [8, 4, 8, 6, 4, 8],
+    // ITIs: [8, 4, 8, 6, 4, 8],
+    ITIs: [3, 4, 2, 5, 6, 4],
     colors: [2, 1, 2, 1, 2, 2]
 }
 
+var lossStartDigits = [1,2,5,6,9];
 var dataRows = [];
 
 function getObserver() {
-    var participantid = localStorage.getItem("participant");
-    let observer = participantid.match(/(\d+)/);
-    return observer.length > 0 ? observer[0] : null;
+    let observer = randperm(2);
 }
 
 function generateScreens({
@@ -38,7 +44,6 @@ function generateScreens({
     timer = 1,
     flip = false
 }) {
-    //Order Gain and Loss block
     let observer = getObserver();
     var lastDigit = observer%10;
     var screens = [];
@@ -50,7 +55,7 @@ function generateScreens({
     }));
     screens.push(new ScreenPBar({
         reverse: observer % 2 === 0, //true:refSide=1 ($5 on the left);false: refSide=2(right)
-        refText: "$5",
+        refText: (flip ^ lossStartDigits.includes(lastDigit)) ? "-$5" : "$5",
         barOptions: {
             numberTop,
             numberBottom,
@@ -72,13 +77,27 @@ function generateScreens({
 async function main() {
     var csvOutput = "";
     for (var blockNumber = 1; blockNumber < 2; ++ blockNumber) {
-        //Block Num screen
         let blockIntroScreen = new ScreenCenterText({
-            textName: `Block Demo`,
-            keyName: ["a", "5"]
+            textName: "Welcome to the demo of the lottery task. Press space to continue.",
+            fontSize: "30px",
+            keyName: [" "]
         });
         await blockIntroScreen.run();
         
+        let keyIntroScreen = new ScreenCenterText({
+            textName: "To select the option on the left, press '1'. To select the option on the right, press '2'. Press space to continue.",
+            fontSize: "30px",
+            keyName: [" "]
+        });
+        await keyIntroScreen.run();
+
+        let selectIntroScreen = new ScreenCenterText({
+            textName: "To make any selection, wait for the green dot. Press space to continue.",
+            fontSize: "30px",
+            keyName: [" "]
+        });
+        await selectIntroScreen.run();
+
         //Trials begin here
         for (var trialNumber = 1; trialNumber < 7; ++ trialNumber) {
             let idx = (blockNumber - 1) * 31 + trialNumber - 1;
@@ -210,6 +229,7 @@ async function main() {
     }
     let endScreen = new ScreenCenterText({
         textName: `Finished Demo!`,
+        fontSize: '30px',
         timer: 2
     });
     await endScreen.run();
@@ -220,8 +240,6 @@ document.forms[0].onsubmit = (e) => {
     e.preventDefault();
     var formData = new FormData(document.forms[0]);
     var obj = Object.fromEntries(Array.from(formData.keys()).map(key => [key, formData.getAll(key).length > 1 ? formData.getAll(key) : formData.get(key)]));
-    localStorage.setItem("participant", obj.participant);
-    localStorage.setItem("session", obj.session);
     document.querySelector('body').requestFullscreen();
     main();
 };
