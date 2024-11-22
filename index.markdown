@@ -26,7 +26,7 @@ toc:
     }
 </style>
 
-This is a list of the neucognitive tasks employed and made by the TREAT lab at VCU.
+This is a list of the neucognitive tasks employed and made by the TREAT lab at Virginia Commonwealth University.
 
 
 <b>Risk and Ambiguity Task</b>
