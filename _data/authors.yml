@@ -1,0 +1,17 @@
+Full_SJG:
+  name        : "TREAT Lab @VCU"
+  bio         : 
+  avatar      : "/assets/images/logo.jpg"
+  links:
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope-square"
+    #   url: "mailto:billyrick@rick.com"
+    # - label: "Website"
+    #   icon: "fas fa-fw fa-link"
+    #   url: "https://thewhip.com"
+    # - label: "Location"
+    #   icon: "fas fa-map"
+    #   url: "https://google.com"
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/"
