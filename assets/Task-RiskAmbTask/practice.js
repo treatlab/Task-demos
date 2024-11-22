@@ -74,7 +74,7 @@ async function main() {
     for (var blockNumber = 1; blockNumber < 2; ++ blockNumber) {
         //Block Num screen
         let blockIntroScreen = new ScreenCenterText({
-            textName: `Block Practice`,
+            textName: `Block Demo`,
             keyName: ["a", "5"]
         });
         await blockIntroScreen.run();
@@ -209,7 +209,7 @@ async function main() {
         };
     }
     let endScreen = new ScreenCenterText({
-        textName: `Finished Practice!`,
+        textName: `Finished Demo!`,
         timer: 2
     });
     await endScreen.run();
