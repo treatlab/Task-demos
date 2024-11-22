@@ -1,11 +1,11 @@
-Full_SJG:
-  name        : "TREAT Lab @VCU"
+Full_TREAT:
+  name        : "Translational Research on Eating and Affect Lab"
   bio         : 
   avatar      : "/assets/images/logo.jpg"
   links:
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope-square"
-    #   url: "mailto:billyrick@rick.com"
+    #   url: "mailto:"
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"
     #   url: "https://thewhip.com"

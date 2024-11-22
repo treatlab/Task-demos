@@ -11,13 +11,8 @@ toc:
 ---
 
 <style>
-    /* .page__content .smallfont {
-        font-size: 2vh;
-        white-space: pre-wrap;
-    } */
-
     small {
-        font-size: .95em;
+        font-size: .75em;
         display: block;
         line-height: 1.3;
     }
@@ -31,6 +26,9 @@ toc:
     }
 </style>
 
-###### Hi there <i class="far fa-smile-beam"></i> 
-<small> This is a list of the neucognitive tasks employed at TREAT lab.
-</small>
+This is a list of the neucognitive tasks employed and made by the TREAT lab at VCU.
+
+
+<b>Risk and Ambiguity Task</b>
+<small>A lottery task [(Levy et al., 2010)](https://pubmed.ncbi.nlm.nih.gov/20032238/) using Javascript and CSS. </small>
+<small>[Code] [[Demo]](https://treatlab.github.io/Task-demos/assets/Task-RiskAmbTask/practice.html)</small>
