@@ -107,21 +107,21 @@ author:
   name             : 
   avatar           : "/assets/images/logo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : 
-  location         : 
-  email            : 
+  location         : Virginia Commonwealth University
+  email            : treatlab@vcuhealth.org
   links:
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"
-    # url: "https://your-website.com"
+    #   url: "https://your-website.com"
     # - label: ""
     #   icon: "fab fa-twitter"
     #   url: "https://twitter.com/"
     # - label: "Facebook"
     #   icon: "fab fa-fw fa-facebook-square"
-    #   # url: "https://facebook.com/"
+    #   url: "https://facebook.com/"
     # - label: "Instagram"
     #   icon: "fab fa-fw fa-instagram"
-    #   # url: "https://instagram.com/"
+    #   url: "https://instagram.com/"
     # - label: ""
     #   icon: "fab fa-fw fa-github"
     #   url: "https://github.com/treatlab"
